@@ -1,0 +1,31 @@
+package fibonacci.recursion.dynamic;
+
+import java.util.Scanner;
+
+public class DynamicRecursion {
+	static int T[]=new int[100];
+	public static void main(String[] args) {
+		System.out.println("Enter number:");
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		for(int i=0;i<a;i++) {
+			T[i]=printSeries(i);			
+		}
+	}
+	
+	public static int printSeries(int n) {
+		if(n==0)
+			return 0;
+		if(n==1)
+			return 1;
+		if(T[n]!=0 || T[n]!=1) {
+			return T[n];
+		}
+		else {
+			T[n]=printSeries(n-1)+printSeries(n-2);	
+		}
+		System.out.println(T[n]);
+		return T[n];
+
+	}
+}

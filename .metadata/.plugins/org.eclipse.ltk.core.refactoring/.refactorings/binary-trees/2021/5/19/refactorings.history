@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;org.trees.operations.AVLOperations.avlRotation(...)&apos; to &apos;avlInsertion&apos;&#x0D;&#x0A;- Original project: &apos;binary-trees&apos;&#x0D;&#x0A;- Original element: &apos;org.trees.operations.AVLOperations.avlRotation(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;org.trees.operations.AVLOperations.avlInsertion(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;avlRotation&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;org.trees.operations{AVLOperations.java[AVLOperations~avlRotation~QBinaryTree;~I" name="avlInsertion" references="true" stamp="1619959803915" version="1.0"/>
+</session>

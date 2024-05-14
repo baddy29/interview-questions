@@ -1,0 +1,25 @@
+package two.sum.main;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class TwoSumMainClass {
+	public static void main(String[] args) {
+		int ar[]= {2,7,11,15};
+		int sum=9,arLength=ar.length;
+		Set<Integer> numSet=new HashSet<>();
+		Set<Integer> numSet2=new HashSet<>();
+		for(int i=0;i<arLength;i++) {
+			numSet.add(ar[i]);
+		}
+		for(int i=0;i<arLength;i++) {
+			int numToFind=sum-ar[i];
+			if(numSet.contains(numToFind)) {
+				numSet2.add(ar[i]);
+				numSet2.add(numToFind);
+			}
+		}
+		numSet2.forEach(z->System.out.println(z));
+	}
+}

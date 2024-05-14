@@ -1,0 +1,87 @@
+package main;
+
+import java.util.HashMap;
+
+public class MainClass {
+
+	class DoublyNode {
+		int data;
+		DoublyNode next;
+		DoublyNode prev;
+
+		DoublyNode(int data) {
+			this.data = data;
+		}
+	}
+
+	class LruCache {
+		int capacity;
+		HashMap<Integer, DoublyNode> cacheMap = new HashMap<>();
+		DoublyNode head;
+		DoublyNode tail;
+
+		public LruCache(int capacity) {
+			this.capacity = capacity;
+			head.next = tail;
+			System.out.print("null, ");
+		}
+
+		public DoublyNode add(DoublyNode node) {
+
+			if (head == null) {
+				head = node;
+				tail = node;
+			} else {
+				tail.next = node;
+				node.prev = tail;
+				tail = node;
+			}
+			return head;
+		}
+
+		public int get(int key) {
+			if (!cacheMap.containsKey(key))
+				return -1;
+			DoublyNode node = cacheMap.get(key);
+			node.prev.next = node.next;
+			node.next.prev = node.prev;
+			node.prev = node.next;
+			node.next = node;
+			tail = node;
+			return cacheMap.get(key).data;
+		}
+
+		public void put(int key, int data) {
+			capacity--;
+			if (capacity < 0) {
+				DoublyNode temp = head;
+				temp.next.prev = null;
+				temp = temp.next;
+				head = temp;
+				capacity++;
+			}
+			DoublyNode newNode = new DoublyNode(data);
+			DoublyNode temp2 = tail;
+			temp2.next = newNode;
+			newNode.prev = temp2;
+			tail = newNode;
+			System.out.print("null ,");
+		}
+	}
+
+	public static void main(String[] args) {
+		MainClass m = new MainClass();
+		LruCache lruCache = m.new LruCache(2);
+		lruCache.put(1, 1);
+		lruCache.put(2, 2);
+		System.out.print(lruCache.get(1) + ", ");
+		lruCache.put(3, 3);
+		System.out.print(lruCache.get(2) + ", ");
+		lruCache.put(4, 4);
+		System.out.print(lruCache.get(1) + ", ");
+		System.out.print(lruCache.get(3) + ", ");
+		System.out.print(lruCache.get(4) + ", ");
+
+	}
+
+}

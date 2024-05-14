@@ -1,0 +1,13 @@
+package product.main;
+
+public class MainClass {
+
+	class Solution{
+		
+		public int[] productExcept(int []ar) {
+			
+			int output[]=new int[ar.length];
+			
+		}
+	}
+}

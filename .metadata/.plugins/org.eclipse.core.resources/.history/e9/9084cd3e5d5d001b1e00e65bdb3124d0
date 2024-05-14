@@ -1,0 +1,97 @@
+package org.link.structure;
+
+import java.util.LinkedList;
+
+public class ListOperations {
+
+	LinkedList<Integer>list=new LinkedList<>();
+	public  void insertAt(int pos, Node head, int data) {
+		Node temp = head;
+		int listPos = 0;
+		while (listPos != pos - 1) {
+			temp = temp.link;
+			++listPos;
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.link = temp.link;
+		temp.link = newNode;
+
+	}
+
+	public  void insertAtBegining(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		newNode.link = head;
+	}
+
+	public  void insertAtEnd(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		Node tempNode = head;
+		while (tempNode.link.link != null)
+			tempNode = tempNode.link;
+		tempNode.link = newNode;
+		newNode.link = null;
+	}
+
+	public  void deleteAt(int pos, Node head) {
+		int listPos = 0;
+		Node temp = head;
+		while (listPos == pos - 1) {
+			temp = temp.link;
+			listPos++;
+		}
+		temp.link = temp.link.link;
+	}
+
+	public  void deleteAtBegining(Node head) {
+		head = head.link;
+	}
+
+	public  void deleteAtEnd(Node head) {
+		Node temp = head;
+		while (temp.link.link != null) {
+			temp = temp.link;
+		}
+		temp.link = null;
+	}
+
+	public  void show(Node head) {
+		Node tempNode = head;
+		while (tempNode.link != null) {
+			System.out.print(tempNode.data + ",");
+			tempNode=tempNode.link;
+		}
+		System.out.println("=============================");
+
+	}
+
+	public  void insert(int data, Node head) {
+		Node newNode = new Node();
+		if (head == null) {
+			newNode.data = data;
+			newNode.link = null;
+			head = newNode;
+		} else {
+			Node temp = head;
+			while (temp.link != null)
+				temp = temp.link;
+			newNode.data = data;
+			newNode.link = null;
+			temp.link = newNode;
+		}
+	}
+	
+	public  void delete(int data,Node head) {
+		Node temp=head;
+		Node prev=new Node();
+		while(temp.data!=data) {
+			prev=temp;
+			temp=temp.link;	
+		}
+		prev.link=temp.link;
+		temp=null;
+	}
+
+}

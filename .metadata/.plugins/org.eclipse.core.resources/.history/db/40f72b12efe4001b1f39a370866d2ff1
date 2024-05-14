@@ -1,0 +1,32 @@
+package org.trees.main;
+
+import java.util.LinkedList;
+
+import org.trees.model.BinaryTree;
+import org.trees.operations.TreeOperation;
+import org.trees.operations.TreeView;
+
+public class Runner3 {
+	public static void main(String[] args) {
+		BinaryTree treeRoot = null;
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 1);
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 2);
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 3);
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 4);
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 5);
+		treeRoot = TreeOperation.insertBSTNode(treeRoot, 6);
+		LinkedList<BinaryTree> levelOrderList=new LinkedList<>();
+		levelOrderList.addLast(treeRoot);
+		//TreeView.levelOrderTraversal(levelOrderList);
+		System.out.println("\n ==");
+		//TreeView.leftView(treeRoot, 1);
+		System.out.println("\n ==");
+		//TreeView.rightView(treeRoot, 1);
+		//TreeView.topView(treeRoot);
+		
+		  TreeOperation.traverse1(treeRoot); System.out.println("\n=================");
+		  TreeOperation.traverse2(treeRoot);
+		 
+	}
+	
+}

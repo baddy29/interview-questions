@@ -1,0 +1,88 @@
+package test;
+
+import java.util.Arrays;
+import java.util.Stack;
+
+public class MainClass {
+	class Interval {
+		int start;
+		int end;
+
+		Interval(int start, int end) {
+			this.end = end;
+			this.start = start;
+
+		}
+	}
+
+	class Solution {
+
+		Stack<Interval> mergeIntervals(Interval arr[]) {
+			Stack<Interval> mergeStack = new Stack<>();
+			Arrays.sort(arr, (o1, o2) -> {
+				return o1.start - o2.start;
+			});
+			mergeStack.push(arr[0]);
+			for (int i = 1; i < arr.length; i++) {
+				if (mergeStack.peek().end < arr[i].start) {
+					mergeStack.push(arr[i]);
+				} else if (mergeStack.peek().end < arr[i].end) {
+					mergeStack.peek().end = arr[i].end;
+				}
+			}
+			return mergeStack;
+		}
+	}
+
+	class Solution2 {
+
+		public Interval[] mergeArrays(Interval[] ar) {
+			Arrays.sort(ar, (o1, o2) -> {
+				return o1.start - o2.start;
+			});
+			
+			int index=0;
+			for(int i=1;i<ar.length;i++) {
+				
+				if(ar[index].end>=ar[i].start) {
+					ar[index].end= ar[i].end>ar[index].end?ar[i].end:ar[index].end;
+				}
+				else if(ar[index].end>ar[i].end){
+					index++;
+				}
+			}
+			return ar;
+		}
+	}
+
+//	static Solution s=new Solution();
+
+	public static void main(String[] args) {
+		MainClass m = new MainClass();
+		Interval[] ar = new Interval[2];
+		ar[0] = m.new Interval(1, 4);
+		ar[1] = m.new Interval(4, 5);
+//		ar[2]=m.new Interval(8,10);
+//		ar[3]=m.new Interval(15,18);
+//		ar[4]=m.new Interval(4, 5);
+
+		Solution s = m.new Solution();
+
+		Stack<Interval> res = s.mergeIntervals(ar);
+		while (!res.isEmpty()) {
+			Interval resInterval = res.pop();
+			System.out.println("[" + resInterval.start + "," + resInterval.end + "]");
+		}
+		
+		System.out.println("=========");
+		
+		Solution2 s2=m.new Solution2();
+		Interval resArr[]=s2.mergeArrays(ar);
+		
+		for(Interval r :resArr) {
+			System.out.print("["+r.start+","+r.end+"]"+" ");
+		}
+
+	}
+
+}

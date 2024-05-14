@@ -1,0 +1,16 @@
+package com.practice;
+
+import java.util.Scanner;
+
+public class Runner {
+	public static void main(String[] args) {
+
+		int[] array = new int[10];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter nuts");
+		for (int i = 0; i < 10; i++) {
+			nuts[i]=sc.nextInt();
+			
+		}
+	}
+}

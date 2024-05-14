@@ -1,0 +1,15 @@
+package org.pkg;
+
+public class Snippet {
+	public static void main(String[] args) {
+		int ar []= {1,2};
+		for(int i =0;i<ar.length;i++) {
+			int sum=Integer.MIN_VALUE;
+			for(int j=i;j<ar.length;j++) {
+				sum+=ar[j];
+				if(sum>ar[j])
+			}
+		}
+	}
+}
+

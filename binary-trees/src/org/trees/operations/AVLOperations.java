@@ -1,0 +1,56 @@
+package org.trees.operations;
+
+import org.trees.model.BinaryTree;
+
+public class AVLOperations {
+	public static int heightOfTree(BinaryTree treeRoot) {
+		if (treeRoot == null)
+			return -1;
+		int lH = heightOfTree(treeRoot.getLeft());
+		int rH = heightOfTree(treeRoot.getRight());
+		int height = 1 + (lH > rH ? lH : rH);
+		return height;
+	}
+
+	public static int getBalanceFactor(BinaryTree node) {
+		if (node == null)
+			return -1;
+		int nodeHeight=heightOfTree(node.getLeft()) - heightOfTree(node.getRight());
+		return nodeHeight;
+	}
+
+	public static BinaryTree leftRotate(BinaryTree root) {
+		BinaryTree node = root.getRight();
+		BinaryTree tempNode = node.getLeft();
+		node.setLeft(root);
+		root.setRight(tempNode);
+		return node;
+	}
+
+	public static BinaryTree rightRotate(BinaryTree root) {
+		BinaryTree node = root.getLeft();
+		BinaryTree tempNode = node.getRight();
+		node.setRight(root);
+		root.setLeft(tempNode);
+		return node;
+	}
+	
+	public static BinaryTree avlInsertion(BinaryTree root,int data) {
+		root=TreeOperation.insertBSTNode(root, data);
+		int balance=getBalanceFactor(root);
+		if(balance>1 && data<root.getLeft().getData()) 
+			root=rightRotate(root);
+		else if(balance<-1 && data>root.getRight().getData())
+			root=leftRotate(root);
+		else if(balance>1 && data>root.getLeft().getData()) {
+			root.setLeft(leftRotate(root));
+			root=rightRotate(root);
+		}
+		else if(balance<-1 && data<root.getRight().getData()) {
+			root.setRight(rightRotate(root));
+			root=leftRotate(root);
+		}
+		return root;
+			
+	}
+}

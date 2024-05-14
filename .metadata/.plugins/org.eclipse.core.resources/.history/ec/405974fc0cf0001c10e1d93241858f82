@@ -1,0 +1,37 @@
+package anagrams.main;
+
+public class MainClass {
+	class Solution {
+	    public boolean isAnagram(String s, String t) {
+	        
+	        HashMap<Character,Integer> valMap1=new HashMap<>();
+	        HashMap<Character,Integer> valMap2=new HashMap<>();
+	        char[] sChars=s.toCharArray();
+	        char[] tChars=t.toCharArray();
+	        boolean anagramExists=true;
+	        for(char c : sChars){
+	            if(valMap1.containsKey(c))
+	                valMap1.put(c,valMap1.get(c)+1);
+	            else   
+	                valMap1.put(c,1);
+	        }
+	        
+	        for(char c : tChars){
+	            if(valMap2.containsKey(c))
+	                valMap1.put(c,valMap1.get(c)+1);
+	            else   
+	                valMap2.put(c,1);
+	        }
+	        
+	        for(Map.Entry<Character,Integer> entry:valMap1.entrySet()){
+	            if(valMap2.containsKey(entry.getKey()) && valMap2.get(entry.getKey()) == entry.getValue()){
+	                continue;
+	            }else{
+	                anagramExists=false;
+	                break;
+	            }
+	        }
+	        return anagramExists;
+	    }
+	}
+}

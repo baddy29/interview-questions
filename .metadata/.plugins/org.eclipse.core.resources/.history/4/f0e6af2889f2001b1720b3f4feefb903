@@ -1,0 +1,12 @@
+package org.count.frequency;
+
+public class BitManipulation {
+	public static void main(String[] args) {
+			
+		int ar[]= {1,1,2,2,4,4,5};
+		System.out.println(1^1^3);
+		for(int i =0;i<ar.length-1;i++) {
+			int x=ar[i]^ar[i+1];
+		}
+	}
+}

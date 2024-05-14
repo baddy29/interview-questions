@@ -1,0 +1,9 @@
+package org.pkg;
+
+public class Snippet {
+	public static void main(String[] args) {
+		int ar = {};
+		
+	}
+}
+

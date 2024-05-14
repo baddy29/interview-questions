@@ -1,0 +1,7 @@
+package org.sort.quick;
+
+public class Runner {
+	public static void main(String[] args) {
+		char nuts= {'^','&','%','@','#','*','$','~','!'};
+	}
+}

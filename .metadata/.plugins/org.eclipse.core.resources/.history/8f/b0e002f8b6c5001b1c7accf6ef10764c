@@ -1,0 +1,16 @@
+package org.trees.commonnodes;
+
+import java.util.HashMap;
+
+import org.trees.model.BinaryTree;
+
+public class RunClass {
+
+	HashMap<Integer,Integer> map=new HashMap<>();
+	public HashMap<Integer,Integer> addNodesToMap(BinaryTree tree) {
+		map.put(tree.getData(),tree.getData());
+		addNodesToMap(tree.getLeft());
+		addNodesToMap(tree.getRight());
+		return map;
+	}
+}

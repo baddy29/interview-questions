@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;lexographic-strings&apos;" deleteContents="false" description="Delete resource &apos;lexographic-strings&apos;" element1="/lexographic-strings" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1611841783299"/>
+</session>

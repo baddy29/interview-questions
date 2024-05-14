@@ -1,0 +1,5 @@
+package org.trees.operations;
+
+public class NodeCounter {
+
+}

@@ -1,0 +1,16 @@
+package org.trie;
+
+public class MainClass {
+	public static void main(String[] args) {
+		TrieOperations trieOp=new TrieOperations();
+		trieOp.initTrie();
+		trieOp.insert("abc");
+		trieOp.insert("efg");
+		trieOp.insert("efc");
+		System.out.println(trieOp.search("efc"));
+		System.out.println(trieOp.prefixSearch("ab"));
+		System.out.println(trieOp.prefixSearch("zx"));
+		System.out.println(trieOp.search("efk"));
+		
+	}
+}

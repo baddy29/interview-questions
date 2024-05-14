@@ -1,0 +1,15 @@
+package anagrams.main;
+
+import java.util.List;
+
+import anagrams.main.MainClass.Solution;
+
+public class GroupAnagramMain {
+
+	class Solution{
+	
+		public List<String> getAnagrams(int ar[]){
+			
+		}
+	}
+}

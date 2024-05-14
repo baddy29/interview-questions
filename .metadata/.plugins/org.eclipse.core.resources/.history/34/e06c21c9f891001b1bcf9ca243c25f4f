@@ -1,0 +1,14 @@
+package com.practice;
+
+import java.util.Scanner;
+
+public class Runner {
+public static void main(String[] args) {
+	
+	int [] nuts=new int[10];
+	int bolts[] = new int[10];
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter nuts");
+	
+	}
+}

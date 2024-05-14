@@ -1,0 +1,52 @@
+package main;
+
+import javax.swing.plaf.basic.BasicDesktopPaneUI;
+
+public class Main {
+
+	class DoublyNode {
+		int data;
+		DoublyNode next;
+		DoublyNode prev;
+
+		DoublyNode(int data) {
+			this.data = data;
+		}
+	}
+
+	class InsertOp {
+
+		DoublyNode head;
+		DoublyNode tail;
+
+		public DoublyNode insertDoublyNode(int data) {
+			DoublyNode newNode = new DoublyNode(data);
+			if (head == null) {
+				head = newNode;
+				tail = newNode;
+			} else {
+				tail.next = newNode;
+				newNode.prev = tail;
+				tail = newNode;
+			}
+			return head;
+		}
+	}
+
+	public static void main(String[] args) {
+		Main m = new Main();
+		InsertOp op = m.new InsertOp();
+		DoublyNode head = op.insertDoublyNode(1);
+		head = op.insertDoublyNode(2);
+		head = op.insertDoublyNode(3);
+		head = op.insertDoublyNode(4);
+		head = op.insertDoublyNode(5);
+		DoublyNode temp=head;
+		while(temp!=null) {
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+
+	}
+
+}

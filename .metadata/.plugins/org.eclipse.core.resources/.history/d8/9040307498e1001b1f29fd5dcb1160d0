@@ -1,0 +1,22 @@
+package org.pkg.nummax;
+
+import java.util.Collections;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class MainClass {
+	public static void main(String[] args) {
+		
+		String s[]= {"12","2","644","5"};
+		TreeMap<Character,String> numMap=new TreeMap<Character,String>();
+		
+		for(String x:s) {
+			numMap.put(x.charAt(0), x);
+		}
+		for(Map.Entry<Character, String> entry:numMap.entrySet()) {
+			System.out.print(entry.getValue());
+		}
+		System.out.println("====");
+		for(Integer key : numMap.descendingKeySet())
+	}
+}

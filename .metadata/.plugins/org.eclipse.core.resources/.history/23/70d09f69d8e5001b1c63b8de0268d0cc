@@ -1,0 +1,12 @@
+package org.pkg;
+
+public class Snippet {
+	public static void main(String[] args) {
+		int ar = {};
+		for(int i =0;i<ar.length;i++) {
+			int sum=Integer.MIN_VALUE;
+			
+		}
+	}
+}
+

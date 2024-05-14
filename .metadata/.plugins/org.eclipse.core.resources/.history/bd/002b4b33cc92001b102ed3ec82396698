@@ -1,0 +1,16 @@
+package org.sort.quick;
+
+public class Runner{
+	public static void main(String[]args){
+		char nuts[]={'^','&','%','@','#','*','$','~','!'};
+		char bolts[]={'~','#','@','%','&','*','$','^','!'};
+		new NutBoltSorter().quickSort(nuts, bolts, 0, 4);
+		for(char character : nuts) {
+			System.out.print(character+" ");
+		}
+		System.out.println();
+		for(char character : nuts) {
+			System.out.print(character+" ");
+		}
+	}
+}

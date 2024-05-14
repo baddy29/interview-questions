@@ -1,0 +1,26 @@
+package MainClass;
+
+import java.util.HashSet;
+import java.util.stream.Collectors;
+
+public class Main {
+	public static void main(String[] args) {
+		int sum=100;
+		int arr[]= {8, 7, 2, 5, 3, 1};
+		HashSet<Integer>numSet=new HashSet<>();
+		for(int x:arr) {
+			if(numSet.contains(sum-x)) {
+				System.out.println(x+","+(sum-x));
+			}
+			numSet.add(x);
+			numSet.stream().collect(Collectors.toList());
+		}
+		if(true)
+			break;
+		
+	}
+}
+
+class C{
+	
+}

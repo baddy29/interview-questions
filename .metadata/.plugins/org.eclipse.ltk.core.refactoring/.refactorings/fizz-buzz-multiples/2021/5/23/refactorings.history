@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.fizz.buss&apos; to &apos;org.fizz.buzz&apos;&#x0D;&#x0A;- Original project: &apos;fizz-buzz-multiples&apos;&#x0D;&#x0A;- Original element: &apos;fizz-buzz-multiples/src/org.fizz.buss&apos;&#x0D;&#x0A;- Renamed element: &apos;fizz-buzz-multiples/src/org.fizz.buzz&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;org.fizz.buss&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.fizz.buss" name="org.fizz.buzz" qualified="false" references="true" stamp="1622354404020" textual="false" version="1.0"/>
+</session>

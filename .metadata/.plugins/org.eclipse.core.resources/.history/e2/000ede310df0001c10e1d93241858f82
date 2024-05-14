@@ -1,0 +1,39 @@
+package main;
+
+public class MainClass {
+	
+	class Solution {
+	    public int maxProfit(int[] prices) {
+	        
+	        int min =Integer.MAX_VALUE;
+	        int max=Integer.MIN_VALUE;
+	        int min_index=0;
+	        if(prices.length==0)
+	        	return -1;
+	        for(int i=0;i<prices.length-1;i++){
+	            if(prices[i]!=0 && prices[i]<min){
+	            	min=prices[i];
+	                min_index=i;
+	            }
+	        }
+	        for(int j=min_index+1;j<prices.length;j++){
+	            if(prices[j]-prices[min_index]>max)
+	                max=prices[j]-prices[min_index];
+	        }
+	        if(max<0)
+	            return 0;
+	        else
+	            return max;
+	        
+	    }
+	}
+	public static void main(String[] args) {
+		MainClass m=new MainClass();
+		Solution s=m.new Solution();
+		int ar[]= {3,2,6,5,0,3};
+		System.out.println(s.maxProfit(ar));
+		String sa="aa";
+		char[] cr=sa.toCharArray()
+	}
+
+}

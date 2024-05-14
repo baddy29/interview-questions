@@ -1,0 +1,10 @@
+package main;
+
+public class SelectionSort {
+	
+	int ar[] = {7,3,4,5,6,8,2};
+	public static void main(String[] args) {
+		
+	}
+
+}

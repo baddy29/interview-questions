@@ -1,0 +1,23 @@
+package org.pkg.frequency;
+
+public class MainClass {
+	public static void main(String[] args) {
+
+		String str = "AABBCCCDDEAAAABBD";
+		int i = 0, j = i + 1;
+		int count = 1;
+		Character s = null;
+		while (j < str.length()) {
+			if (str.charAt(i) == str.charAt(j)) {
+				count++;
+			} else {
+				System.out.print(s.toString() + count);
+				s=str.charAt(j);
+				count = 1;
+				i = j;
+			}
+			j++;
+		}
+		System.out.print(s.toString() + count);
+	}
+}

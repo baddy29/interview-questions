@@ -1,0 +1,8 @@
+package org.sort.quick;
+
+public class Runner{
+	publicstaticvoidmain(String[]args){
+		char nuts[]={'^','&','%','@','#','*','$','~','!'};
+		char bolts[]={~','#','@','%','&','*','$','^','!}
+	}
+}

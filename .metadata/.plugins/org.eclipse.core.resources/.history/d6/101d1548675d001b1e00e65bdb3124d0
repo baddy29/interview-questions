@@ -1,0 +1,109 @@
+package org.link.structure;
+
+import java.util.LinkedList;
+
+public class ListOperations {
+
+	LinkedList<Integer>list=new LinkedList<>();
+	public  Node insertAt(int pos, Node head, int data) {
+		Node temp = head;
+		Node prev=new Node();
+		int listPos = 0;
+		while (listPos != pos - 1) {
+			prev=temp;
+			temp = temp.link;
+			++listPos;
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.link = temp;
+		prev.link = newNode;
+		return head;
+
+	}
+
+	public  Node insertAtBegining(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		newNode.link = head;
+		return newNode;
+	}
+
+	public  Node insertAtEnd(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		Node tempNode = head;
+		while (tempNode.link.link != null)
+			tempNode = tempNode.link;
+		tempNode.link = newNode;
+		newNode.link = null;
+		return head;
+	}
+
+	public  Node deleteAt(int pos, Node head) {
+		int listPos = 0;
+		Node temp = head;
+		Node prev=new Node();
+		while (listPos == pos - 1) {
+			prev=temp;
+			temp = temp.link;
+			listPos++;
+		}
+		prev.link=temp.link.link;
+		return head;
+	}
+
+	public  Node deleteAtBegining(Node head) {
+		head = head.link;
+		return head;
+	}
+
+	public  Node deleteAtEnd(Node head) {
+		Node temp = head;
+		while (temp.link.link != null) {
+			temp = temp.link;
+		}
+		temp.link = null;
+		return head;
+	}
+
+	public  void show(Node head) {
+		Node tempNode = head;
+		while (tempNode != null) {
+			System.out.print(tempNode.data + " ");
+			tempNode=tempNode.link;
+		}
+		System.out.println("=============================\n");
+
+	}
+
+	public  Node insert(int data, Node head) {
+		Node newNode = new Node();
+		if (head == null) {
+			newNode.data = data;
+			newNode.link = null;
+			head = newNode;
+		} else {
+			Node temp = head;
+			while (temp.link != null)
+				temp = temp.link;
+			newNode.data = data;
+			newNode.link = null;
+			temp.link = newNode;
+		}
+		return head;
+	}
+	
+	public  Node delete(int data,Node head) {
+		Node temp=head;
+		Node prev=new Node();
+		while(temp.link.data!=data) {
+			prev=temp;
+			temp=temp.link;	
+		}
+		prev.link=temp.link;
+		temp=null;
+		return head;
+	}
+
+}

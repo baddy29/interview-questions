@@ -1,0 +1,10 @@
+package org.trees.operations;
+
+import com.sun.source.tree.BinaryTree;
+
+public class NodeCounter {
+
+	public int countNode(org.trees.model.BinaryTree) {
+		
+	}
+}

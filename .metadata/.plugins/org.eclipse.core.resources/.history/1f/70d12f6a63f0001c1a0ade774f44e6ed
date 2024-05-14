@@ -1,0 +1,33 @@
+package product.main;
+
+public class MainClass {
+
+	class Solution{
+		
+		public int[] productExcept(int []ar) {
+			
+			int output[]=new int[ar.length];
+			output[0]=ar[0];
+			for(int i=1;i<ar.length;i++) {
+				output[i]*=ar[i-1];
+			}
+			int product=ar[ar.length-1];
+			output[ar.length-1]=output[ar.length-2];
+			for(int j=ar.length-2;j>0;j--) {
+				output[j]=output[j-1]*product;
+				product=ar[j]*product;
+			}
+			output[0]=output[1]*product;
+			return output;
+		}
+	}
+	public static void main(String[] args) {
+		MainClass m=new MainClass();
+		Solution s=m.new Solution();
+		int ar[]= {1,2,3,4};
+		int output[]= s.productExcept(ar);
+		for(int i:output){
+			System.out.print(i+" ,");
+		}
+	}
+}
