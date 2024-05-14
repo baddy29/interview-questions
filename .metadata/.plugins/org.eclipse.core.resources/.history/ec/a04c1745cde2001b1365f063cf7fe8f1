@@ -1,0 +1,12 @@
+package org.count.frequency;
+
+public class MainClass3 {
+	public static void main(String[] args) {
+		System.gc();
+		System.out.println("in main");
+	}
+	@Override
+	public void finalize() {
+		
+	}
+}

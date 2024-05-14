@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.practice.Swapper.swap(...)&apos; to &apos;swapArrayElement&apos;&#x0D;&#x0A;- Original project: &apos;quick-sort&apos;&#x0D;&#x0A;- Original element: &apos;com.practice.Swapper.swap(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;com.practice.Swapper.swapArrayElement(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;swap&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;com.practice{Swapper.java[Swapper~swap~\[I~I~I" name="swapArrayElement" references="true" stamp="1617180285551" version="1.0"/>
+</session>

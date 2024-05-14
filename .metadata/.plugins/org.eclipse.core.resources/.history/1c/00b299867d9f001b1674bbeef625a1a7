@@ -1,0 +1,19 @@
+package org.trees.operations;
+
+import java.util.Scanner;
+
+import org.trees.model.BinaryTree;
+
+public class TreeCreation {
+	
+	public BinaryTree create() {
+		BinaryTree treeNode=new BinaryTree();
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter root node");
+		int data = sc.nextInt();
+		treeNode.setData(data);
+		treeNode.setLeft(create());
+		treeNode.setRight(create);
+		return treeNode;
+	}
+}

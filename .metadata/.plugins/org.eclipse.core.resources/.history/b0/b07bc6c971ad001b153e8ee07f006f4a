@@ -1,0 +1,14 @@
+package org.rotate.twod.array;
+
+import java.util.Scanner;
+
+public class TwoDRotation {
+
+	public static void main(String[] args) {
+		int[][] array=new int[3][3];
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter elements");
+		
+	
+	}	
+}

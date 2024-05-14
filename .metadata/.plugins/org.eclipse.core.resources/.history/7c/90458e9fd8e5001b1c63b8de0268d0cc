@@ -1,0 +1,18 @@
+package org.pkg;
+
+public class Snippet {
+	public static void main(String[] args) {
+		int ar []= {1,2};
+		int max=Integer.MIN_VALUE;
+		for(int i =0;i<ar.length;i++) {
+			int sum=Integer.MIN_VALUE;
+			for(int j=i;j<ar.length;j++) {
+				sum+=ar[j];
+				if(sum>max) {
+					max=sum;
+				}
+			}
+		}
+	}
+}
+

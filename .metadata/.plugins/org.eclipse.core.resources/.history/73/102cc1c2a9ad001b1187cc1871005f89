@@ -1,0 +1,28 @@
+package org.gap.main;
+
+public class BInaryGapRunner {
+	public static int binaryGap(int N) {
+		boolean started=false;
+		int max=0,counter=0;
+		String bString= Integer.toBinaryString(N);
+		for(int i=0;i<bString.length();i++) {
+			String c= bString.substring(i,i+1);
+			if(c.equals("1")) {
+				if(started) {
+					if(counter>max) {
+						max=counter;
+					}
+				}
+				counter=0;
+				started=true;
+			}
+			if(c.equals("0")) {
+				counter++;
+			}
+		}
+		return max;
+	}
+	public static void main(String[] args) {
+		System.out.println(binaryGap(9));
+	}
+}

@@ -1,0 +1,53 @@
+package two.sum.main;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class TwoSumMainClass {
+	public static void main(String[] args) {
+		int ar[]= {2,7,11,15};
+		int sum=9,arLength=ar.length;
+		Set<Integer> numSet=new HashSet<>();
+		Set<Integer> numSet2=new HashSet<>();
+		for(int i=0;i<arLength;i++) {
+			numSet.add(ar[i]);
+		}
+		for(int i=0;i<arLength;i++) {
+			int numToFind=sum-ar[i];
+			if(numSet.contains(numToFind)) {
+				numSet2.add(ar[i]);
+				numSet2.add(numToFind);
+			}
+		}
+		numSet2.forEach(z->System.out.println(z));
+	}
+}
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Set<Integer> numSet= new HashSet<>();
+        List<int[]> arlist=Arrays.asList(nums);
+        HashMap<Integer,Integer> posMap=new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            posMap.put(i+1,nums[i]);
+        }
+        for(int i=0;i<nums.length;i++){
+            if(!numSet.contains(target-nums[i]) && 
+              arList.contains(target-ar[i])){
+                numSet.add(target-ar[i]);
+            }
+        }
+        int ar[numSet.size()];
+        int i=0;
+        for(Map.Entry<Integer>: posMay.entrySet()){
+            if(numSet.contains(entrySet().getValue())){
+                ar[i]=entrySet().getKey();
+                i++;
+            }
+        }
+        return ar;
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;root&apos; in &apos;org.trees.main.Runner.main(...)&apos; to &apos;treeRoot&apos;&#x0D;&#x0A;- Original project: &apos;binary-trees&apos;&#x0D;&#x0A;- Original element: &apos;org.trees.main.Runner.main(String[]).root&apos;&#x0D;&#x0A;- Renamed element: &apos;root&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;root&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;org.trees.main{Runner.java[Runner~main~\[QString;@root!230!250!241!244!QBinaryTree;!0!false" name="treeRoot" references="true" stamp="1619674920294" version="1.0"/>
+</session>

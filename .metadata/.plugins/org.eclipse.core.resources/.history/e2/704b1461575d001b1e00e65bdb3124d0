@@ -1,0 +1,9 @@
+package org.link.structure;
+
+public class LinkedListRunner {
+
+	Node node=new Node();
+	public static void main(String[] args) {
+		
+	}
+}

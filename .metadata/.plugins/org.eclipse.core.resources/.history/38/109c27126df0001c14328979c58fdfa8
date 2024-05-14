@@ -1,0 +1,10 @@
+package anagrams.main;
+
+import anagrams.main.MainClass.Solution;
+
+public class GroupAnagramMain {
+
+	class Solution{
+		
+	}
+}

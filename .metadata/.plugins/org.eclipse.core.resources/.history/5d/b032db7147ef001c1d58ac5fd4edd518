@@ -1,0 +1,27 @@
+package test;
+
+import java.util.Stack;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+	}
+
+	class Interval {
+		int start;
+		int end;
+
+		Interval(int start, int end) {
+			this.end = end;
+			this.start = start;
+
+		}
+	}
+	public class Solution{
+		
+		Stack<Interval> mergeIntervals())
+	}
+}
+
+

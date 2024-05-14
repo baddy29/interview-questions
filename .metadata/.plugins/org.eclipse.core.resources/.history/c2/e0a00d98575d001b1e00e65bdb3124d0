@@ -1,0 +1,10 @@
+package org.link.structure;
+
+public class LinkedListRunner {
+
+	Node head=new Node();
+	ListOperations operation=new ListOperations();
+	public static void main(String[] args) {
+		
+	}
+}

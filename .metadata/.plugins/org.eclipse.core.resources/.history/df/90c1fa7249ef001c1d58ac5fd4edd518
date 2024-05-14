@@ -1,0 +1,50 @@
+package test;
+
+import java.util.Arrays;
+import java.util.Stack;
+
+public class MainClass {
+	class Interval {
+		int start;
+		int end;
+
+		Interval(int start, int end) {
+			this.end = end;
+			this.start = start;
+
+		}
+	}
+	class Solution{
+		
+		Stack<Interval> mergeIntervals(Interval arr[]){
+			Stack<Interval> mergeStack=new Stack<>();
+			mergeStack.push(arr[0]);
+			Arrays.sort(arr,(o1,o2)->{
+				return o1.start-o2.start;
+			});
+			for(int i=1;i<arr.length;i++) {
+				if(mergeStack.peek().end<arr[i].start) {
+					mergeStack.push(arr[i]);
+				}
+				else if(mergeStack.peek().end<arr[i].end) {
+					mergeStack.peek().end=arr[i].end;
+				}
+			}
+			return mergeStack;
+		}
+	}
+	
+//	static Solution s=new Solution();
+
+	public static void main(String[] args) {
+		MainClass m=new MainClass();
+		Interval i=new Interval(4, 5);
+		
+	}
+
+	
+	
+}
+
+
+

@@ -1,0 +1,99 @@
+package org.trees.operations;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.trees.model.BinaryTree;
+
+public class TreeView {
+
+	static int max_level = 0;
+	static int max_level2 = 0;
+	static LinkedList<Integer> levelOrderList = new LinkedList<>();
+
+	public static void levelOrderTraversal(LinkedList<BinaryTree> nodeDataList, int l) {
+		if (!nodeDataList.isEmpty() && nodeDataList.getFirst() != null) {
+			levelOrderList.add(nodeDataList.getFirst().getData());
+			System.out.println(nodeDataList.getFirst().getData());
+			if(l%2!=0) {
+				if (nodeDataList.getLast().getLeft() != null && l%2!=0) {
+					nodeDataList.addLast(nodeDataList.getFirst().getLeft());
+				}
+				if (nodeDataList.getFirst().getRight() != null ) {
+					nodeDataList.addLast(nodeDataList.getFirst().getRight());
+				}
+			}else {
+				if (nodeDataList.getFirst().getRight() != null && l%2!=0) {
+					nodeDataList.addLast(nodeDataList.getFirst().getLeft());
+				}
+				if (nodeDataList.getFirst().getLeft() != null ) {
+					nodeDataList.addLast(nodeDataList.getFirst().getRight());
+				}
+			}
+			
+			nodeDataList.removeFirst();
+			levelOrderTraversal(nodeDataList,l+1);
+		}
+	}
+
+	public static void leftView(BinaryTree node, int level) {
+		if (node == null)
+			return;
+		if (node != null) {
+			if (level > max_level) {
+				System.out.println(node.getData());
+				max_level = level;
+			}
+			leftView(node.getLeft(), level + 1);
+			leftView(node.getRight(), level + 1);
+		}
+	}
+
+	public static void rightView(BinaryTree node, int level) {
+		if (node == null)
+			return;
+		if (node != null) {
+			if (level > max_level2) {
+				System.out.println(node.getData());
+				max_level2 = level;
+			}
+			rightView(node.getRight(), level + 1);
+			rightView(node.getLeft(), level + 1);
+		}
+	}
+
+	static public void topView(BinaryTree node) {
+		TreeMap<Integer, List<Integer>> mp = new TreeMap<>();
+		mp = verticalOrderTree(node, mp, 0);
+		for(Map.Entry<Integer, List<Integer>> set : mp.entrySet()) {
+			System.out.println(set.getValue());
+		}
+	}
+
+	public static TreeMap<Integer, List<Integer>> verticalOrderTree(BinaryTree node, TreeMap<Integer, List<Integer>> mp, int h) {
+		if (node != null) {
+			List<Integer> list=new ArrayList<>();
+			list.add(node.getData());
+			if(mp.get(h)!=null) {
+				for(int i: levelOrderList) {
+					if(i==mp.get(h).get(0)) {
+						break;
+					}
+					if(i==node.getData()) {
+						mp.put(h,list);
+						break;
+					}
+				}
+			}else {
+				mp.put(h,list);
+			}
+			verticalOrderTree(node.getLeft(), mp, h - 1);
+			verticalOrderTree(node.getRight(), mp, h + 1);
+		}
+		return mp;
+
+	}
+}

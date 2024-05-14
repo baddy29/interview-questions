@@ -1,0 +1,19 @@
+package pkg;
+
+public class MainClass {
+	class Node
+	{
+	    int data;
+	    Node next;
+	    Node(int key)
+	    {
+	        data = key;
+	        next = null;
+	    }
+	}
+	public static void main(String[] args) {
+		
+		
+	}
+	
+}

@@ -1,0 +1,12 @@
+package org.trees.operations;
+
+import org.trees.model.BinaryTree;
+
+public class NodeCounter {
+
+	public int countNode(BinaryTree root) {
+		if(root!=null) {
+			return (1+countNode(root.getLeft())+countNode(root.getRight()));
+		}
+	}
+}

@@ -1,0 +1,42 @@
+package org.parantheses.main;
+
+import java.util.ArrayList;
+
+public class MainClass {
+	static int count=0;
+	public static void main(String[] args) {
+		int open=4;
+		int close =4;
+		String parentheses1=new String();
+		ArrayList<String>balanced=new ArrayList<>();
+		if(open==close) {
+			balance(open,close,parentheses1);	
+			/*
+			 * for(String s:balanced) { System.out.println(s); }
+			 */
+
+		}
+		else {
+			System.out.println("Invalid input");
+		}
+	}
+	
+	public static void balance(int open,int close,String parentheses) {
+		if(open==0 && close==0) {
+			/*
+			 * balancedStrings.add(parentheses); return;
+			 */
+			System.out.println(++count);
+		}
+		if(open>0) {
+			String openParentheses=parentheses;
+			openParentheses+="(";
+			balance(open-1, close, openParentheses);
+		}
+		if(close>open) {
+			String closeParentheses=parentheses;
+			closeParentheses+=")";
+			balance(open, close-1, closeParentheses);
+		}
+	} 
+}

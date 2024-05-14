@@ -1,0 +1,27 @@
+package main;
+
+public class SelectionSort {
+
+	static int ar[] = { 7, 3, 4, 5, 6, 8, 2 };
+
+	public static void main(String[] args) {
+		int j = 0;
+		for (int i = 0; i < 7; i++) {
+			int min = ar[i];
+			int temp;
+			for (j = i + 1; i < 6; j++) {
+				if (min > ar[j]) {
+					min = ar[j];
+				}
+			}
+			temp = ar[i];
+			ar[i] = min;
+			ar[j] = temp;
+
+		}
+		for(int x:ar) {
+			System.out.print(x+", ");
+		}
+	}
+
+}

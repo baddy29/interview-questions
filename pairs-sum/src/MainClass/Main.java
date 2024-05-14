@@ -1,0 +1,27 @@
+package MainClass;
+
+import java.util.HashSet;
+import java.util.stream.Collectors;
+
+public class Main {
+	public static void main(String[] args) {
+		int sum = 104;
+		int arr[] = { 100,4};
+		HashSet<Integer> numSet = new HashSet<>();
+		for (int x : arr) {
+			if (numSet.contains(sum - x)) {
+				System.out.println(x + "," + (sum - x));
+			}
+			numSet.add(x);
+		}
+	}
+}
+
+class C {
+	public static  void main() {
+		char[] str = { 'i', 'n', 'c', 'l', 'u', 'd', 'e', 'h', 'e', 'l', 'p' };
+		double f=1.0 / 0.0;
+		System.out.println(str.toString());
+	}
+
+}

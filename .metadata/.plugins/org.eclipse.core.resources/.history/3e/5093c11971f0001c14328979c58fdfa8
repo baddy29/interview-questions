@@ -1,0 +1,30 @@
+package anagrams.main;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+import anagrams.main.MainClass.Solution;
+
+public class GroupAnagramMain {
+
+	class Solution{
+	
+		public List<String> getAnagrams(String ar[]){
+			
+			/*int count[]=new int[26];
+			for(String s : ar) {
+				
+			*/
+		HashMap<int[], List<String>> anagramMap=new HashMap<>();
+		
+		for(String s : ar) {
+				char[] chars=s.toLowerCase().toCharArray();
+				Arrays.sort(chars);
+				
+			}}
+
+		
+		}
+	}
+}

@@ -1,0 +1,25 @@
+package org.partotion.palindrome;
+
+public class ManiClass {
+	public static void main(String[] args) {
+		String s = "banana";
+		/*
+		 * for (int i = 0; i < s.length() - 1; i++) { String sub = s.substring(i + 1,
+		 * s.length()); if (sub.equals(reverse(sub))) { System.out.println(sub); } }
+		 */
+	}
+	
+	public static void palindromic(String s) {
+		if(s.equals(reverse(s))) {
+			
+		}
+	}
+
+	public static boolean reverse(String sub) {
+		String reverseString = "";
+		for (int i = sub.length() - 1; i > -1; i--) {
+			reverseString += sub.charAt(i);
+		}
+		return true?sub.equals(reverseString):false;
+	}
+}

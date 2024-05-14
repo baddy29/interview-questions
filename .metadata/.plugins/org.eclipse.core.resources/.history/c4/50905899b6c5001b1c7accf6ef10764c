@@ -1,0 +1,10 @@
+package org.trees.commonnodes;
+
+import org.trees.model.BinaryTree;
+
+public class RunClass {
+
+	public void addNodesToMap(BinaryTree tree) {
+		
+	}
+}

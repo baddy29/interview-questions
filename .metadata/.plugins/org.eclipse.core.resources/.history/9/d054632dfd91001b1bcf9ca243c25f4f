@@ -1,0 +1,16 @@
+package com.practice;
+
+public class QuickSort {
+	Swapper swapper=new Swapper();
+
+	public void quickSort(int arr[],int low,int high) {
+		int pivot=arr[high];
+		int k=low-1;
+		for(int i=low;i<high;i++) {
+			if(arr[i]<pivot) {
+				k++;
+				swap(arr,k,i);
+			}
+		}
+	}
+}

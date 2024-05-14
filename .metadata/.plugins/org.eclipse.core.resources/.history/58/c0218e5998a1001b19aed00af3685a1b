@@ -1,0 +1,16 @@
+package org.trees.main;
+
+import org.trees.model.BinaryTree;
+import org.trees.operations.TreeOperation;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		BinaryTree treeRoot = TreeOperation.create();
+		TreeOperation.traverse(treeRoot);
+		System.out.println("No. of nodes=" + TreeOperation.countNode(treeRoot));
+		System.out.println("No. of leaves=" + TreeOperation.countLeaves(treeRoot));
+		System.out.println("No. of full nodes=" + TreeOperation.countFullNodes(treeRoot));
+
+	}
+}

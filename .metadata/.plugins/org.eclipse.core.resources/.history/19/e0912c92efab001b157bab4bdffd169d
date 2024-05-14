@@ -1,0 +1,40 @@
+package org.trie;
+
+public class TrieOperations {
+
+	private Trie root=null;
+	
+	public Trie initTrie() {
+		root=new Trie('\0');
+		return root;
+	}
+	public void insert(String word) {
+		Trie currNode=root;
+		for(int i=0;i<word.length();i++) {
+			char currChar=word.charAt(i);
+			if(currNode.childNode[currChar-'a']==null)
+				currNode.childNode[currChar-'a']=new Trie(currChar);
+			currNode=currNode.childNode[currChar-'a'];
+		}
+		currNode.isWord=true;
+	}
+	
+	public Trie getNode(String word) {
+		Trie currNode=root;
+		for(int i=0;i<word.length();i++) {
+			char currChar=word.charAt(i);
+			if(currNode.childNode[currChar-'a']==null) return null;
+			currNode=currNode=currNode.childNode[currChar-'a'];
+		}
+		return currNode;
+	}
+	
+	public boolean search(String word) {
+		Trie node=getNode(word);
+		return node!=null && node.isWord;
+	}
+	
+	public boolean prefixSearch(String word) {
+		return getNode(word)!=null;
+	}
+}

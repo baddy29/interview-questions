@@ -1,0 +1,20 @@
+package org.pkg;
+
+public class MainClass {
+	public static void main(String[] args) {
+		int ar[] = { -2, -1};
+		int curr_max = 0;
+		int max_so_far = Integer.MIN_VALUE;
+		for (int i = 0; i < ar.length; i++) {
+			curr_max = curr_max + ar[i];
+			if (curr_max > max_so_far) {
+				max_so_far = curr_max;
+			}
+			if (curr_max < 0) {
+				curr_max = 0;
+			}
+
+		}
+		System.out.println(max_so_far);
+	}
+}

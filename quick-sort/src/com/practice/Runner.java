@@ -1,0 +1,26 @@
+package com.practice;
+
+import java.util.Scanner;
+
+public class Runner {
+	QuickSort quickSort=new QuickSort();
+	public static void main(String[] args) {
+
+		int[] array = new int[10];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter array");
+		for (int i = 0; i < 10; i++) {
+			array[i] = sc.nextInt();
+		}
+		sc.close();
+		System.out.println("Entered array is :");
+		for(int item:array) {
+			System.out.print(item+" ");
+		}
+		QuickSort.quickSort(array, 0, 9);
+		System.out.println("Sorted array is :");
+		for(int item:array) {
+			System.out.print(item+" ");
+		}
+	}
+}

@@ -1,0 +1,35 @@
+package pkg;
+
+public class MainClass {
+	class Node
+	{
+	    int data;
+	    Node next;
+	    Node(int key)
+	    {
+	        data = key;
+	        next = null;
+	    }
+	}
+	public static void main(String[] args) {
+		class Solution
+		{
+		    public static Node reverse(Node node, int k)
+		    {
+		        //Your code here
+		    }
+		}
+		Solution ob = new Solution();
+        Node res = ob.reverse(head, k);
+        printList(res);
+	}
+	
+	class Solution
+	{
+	    public Node reverse(Node node, int k)
+	    {
+			return node;
+	    }
+	}
+	
+}

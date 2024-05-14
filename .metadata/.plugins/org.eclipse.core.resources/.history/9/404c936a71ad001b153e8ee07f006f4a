@@ -1,0 +1,11 @@
+package org.rotate.twod.array;
+
+import java.util.Scanner;
+
+public class TwoDRotation {
+
+	int[][] array=new int[3][3];
+	System.out.println("sd");
+	Scanner sc=new Scanner(System.in);	
+	
+}

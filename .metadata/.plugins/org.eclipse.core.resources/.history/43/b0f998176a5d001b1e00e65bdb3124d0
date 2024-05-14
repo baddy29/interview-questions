@@ -1,0 +1,113 @@
+package org.link.structure;
+
+import java.util.LinkedList;
+
+public class ListOperations {
+
+	LinkedList<Integer>list=new LinkedList<>();
+	Node temp =new Node();
+	Node newNode =new Node();
+	public  Node insertAt(int pos, Node head, int data) {
+		temp= head;
+		Node prev=new Node();
+		int listPos = 0;
+		while (listPos != pos - 1) {
+			prev=temp;
+			temp = temp.link;
+			++listPos;
+		}
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.link = temp;
+		prev.link = newNode;
+		return head;
+
+	}
+
+	public  Node insertAtBegining(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		newNode.link = head;
+		return newNode;
+	}
+
+	public  Node insertAtEnd(Node head, int newData) {
+		Node newNode = new Node();
+		newNode.data = newData;
+		temp= head;
+		while (temp.link != null)
+			temp= temp.link;
+		temp.link = newNode;
+		newNode.link = null;
+		return head;
+	}
+
+	public  Node deleteAt(int pos, Node head) {
+		int listPos = 0;
+		temp = head;
+		Node prev=new Node();
+		while (listPos != pos - 1) {
+			prev=temp;
+			temp = temp.link;
+			listPos++;
+		}
+		prev.link=temp.link.link;
+		return head;
+	}
+
+	public  Node deleteAtBegining(Node head) {
+		head = head.link;
+		return head;
+	}
+
+	public  Node deleteAtEnd(Node head) {
+		temp = head;
+		while (temp.link.link != null) {
+			temp = temp.link;
+		}
+		temp.link = null;
+		return head;
+	}
+
+	public  void show(Node head) {
+		temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + " ");
+			temp=temp.link;
+		}
+		System.out.println("=============================\n");
+
+	}
+
+	public  Node insert(int data, Node head) {
+		Node newNode = new Node();
+		if (head == null) {
+			newNode.data = data;
+			newNode.link = null;
+			head = newNode;
+		} else {
+			temp = head;
+			while (temp.link != null)
+				temp = temp.link;
+			newNode.data = data;
+			newNode.link = null;
+			temp.link = newNode;
+		}
+		return head;
+	}
+	
+	public  Node delete(int data,Node head) {
+		if(head.data==data) {
+			head=deleteAtBegining(head);
+		}
+		temp=head;
+		while(temp.link!=null) {
+			if(temp.data==data) {
+				temp.link=temp.link.link;
+			}
+			temp=temp.link;
+		}
+		return head;
+	}
+
+}

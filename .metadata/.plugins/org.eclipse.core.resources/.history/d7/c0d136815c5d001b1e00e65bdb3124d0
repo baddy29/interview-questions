@@ -1,0 +1,49 @@
+package org.link.structure;
+
+public class LinkedListRunner {
+
+	static Node head=null;
+	operation operation=new operation();
+	public static void main(String[] args) {
+		operation.insert(10, head);
+		operation.insert(20, head);
+		operation.insert(30, head);
+		operation.insert(40, head);
+		operation.insert(50, head);
+		System.out.println("List created");
+		operation.show(head);		
+		
+		operation.insertAt(3, head, 110);
+		System.out.println("110 inserted at 3rd position");
+		operation.show(head);		
+		
+		operation.insertAtBegining(head, 120);
+		System.out.println("120 inserted at begining");
+		operation.show(head);		
+		
+		operation.insertAtEnd(head, 130);
+		System.out.println("120 inserted at end");
+		operation.show(head);		
+		
+		operation.deleteAt(3, head);
+		System.out.println("Element deleted at 3rd position");
+		operation.show(head);		
+		
+		operation.deleteAtBegining(head);
+		System.out.println("Element deleted at begining");
+		operation.show(head);		
+		
+		operation.deleteAtEnd(head);
+		System.out.println("Element deleted at end");
+		operation.show(head);		
+
+		operation.delete(10, head);
+		System.out.println("10 deleted from list");
+		operation.show(head);		
+
+	}
+	
+	public void callOperations() {
+		
+	}
+}

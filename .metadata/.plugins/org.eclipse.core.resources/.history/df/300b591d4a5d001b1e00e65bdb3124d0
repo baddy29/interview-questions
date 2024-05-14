@@ -1,0 +1,31 @@
+package org.link.structure;
+
+public class ListOperations {
+
+	public void insertAt() {
+		
+	}
+	public void insertAtBegining(Node head,int newData) {
+		Node newNode=new Node();
+		newNode.data=newData;
+		newNode.link=head;
+	}
+	public void insertAtEnd(Node head,int newData) {
+		Node newNode=new Node();
+		newNode.data=newData;
+		
+	}
+	public void deleteAt() {
+		
+	}
+	public void deleteAtBegining() {
+		
+	}
+	public void deleteAtEnd() {
+		
+	}
+	public void traverse(){
+		
+	}
+	
+}

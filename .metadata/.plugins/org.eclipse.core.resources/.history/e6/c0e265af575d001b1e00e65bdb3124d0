@@ -1,0 +1,16 @@
+package org.link.structure;
+
+public class LinkedListRunner {
+
+	static Node head=new Node();
+	static ListOperations operation=new ListOperations();
+	public static void main(String[] args) {
+		operation.insert(10, head);
+		operation.insert(20, head);
+		operation.insert(30, head);
+		operation.insert(40, head);
+		operation.insert(50, head);
+		
+		
+	}
+}
